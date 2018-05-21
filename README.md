@@ -1,4 +1,3 @@
 # Pokemon-Algorithms
-A set of algorithms that work with a json formatted pokedex
-
-Uses pokedex jsons from https://github.com/burtlo/pokedex, thanks to burtlo
+A set of algorithms that work with the pokemon-api to download to json from the api and perform some searches.
+Thanks to the creators of the pokemon api!
