@@ -18,12 +18,17 @@ def getAllEvolvesTo(total, evolves):
 
 evolutionChainInformation = requests.get("https://pokeapi.co/api/v2/evolution-chain/").json()
 allMaxEvolvedPokemon = []
-for i in range(1, 430):
+totalChains = evolutionChainInformation["count"]
+i = 1
+hits = 0
+while hits < totalChains:
     print(i)
     try:
         getAllEvolvesTo(allMaxEvolvedPokemon, requests.get("https://pokeapi.co/api/v2/evolution-chain/" + str(i) + "/").json()["chain"])
+        hits += 1
     except:
         print("Error on " + str(i))
+    i += 1
 
 file = open("jsonpokemon.json", "w")
 json.dump(allMaxEvolvedPokemon, file)
